@@ -1,0 +1,16 @@
+{
+  "name": "reload-multi-device",
+  "version": "0.1.0",
+  "description": "",
+  "main": "client.js",
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/arnaud-huc/reload-multi-device.git"
+  },
+  "author": "Arnaud Huc",
+  "devDependencies": {
+    "socket.io": "~0.9.16",
+    "express": "~3.4.7",
+    "MD5": "~1.2.0"
+  }
+}
