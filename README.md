@@ -15,7 +15,7 @@ To install RMD, you have ton run a this following into the reload multi device f
 ```
 npm install
 ```
-It will install all dependencies for RMD (such as socket.io and express)
+It will install all dependencies for RMD (such as [socket.io](http://socket.io/) and [express](http://expressjs.com/))
 
 ##How to use##
 
