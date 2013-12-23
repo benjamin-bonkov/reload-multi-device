@@ -1,6 +1,5 @@
 reload-multi-device
 ===================
-# Welcome
 
 Welcome to Reload Multi Device
 
