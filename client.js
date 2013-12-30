@@ -1,5 +1,5 @@
 (function($){
-	var urlSite ='', // Url du site. Doit être sous la forme suivante http://192.168.1.1/monsite/
+	var urlSite ='http://10.249.3.23/labV2/', // Url du site. Doit être sous la forme suivante http://192.168.1.1/monsite/
 	    iframe  = $('#iframe'),
 	    socket  = io.connect(location.hostname + ':9000/'), // On écoute socket.io sur le port 9000
 	    hash = window.location.hash;
@@ -7,9 +7,8 @@
 	//Récupère le DOM tout entier, le supprime et le remplace par un DOM appellé en AJAX
 	$.get(urlSite, function(){
 		iframe.attr('src', urlSite)
-		iframe.height(screen.height);
+		iframe.height(window.height);
 	});
-
 
 	//On demande un utilisateur et on l'envoi
 	if(hash == '#login'){
@@ -46,7 +45,6 @@
 	//Récupère le DOM de l'iframe pour pouvoir avoir accès aux liens
 	function getIframeDOM() {
 		$('iframe').contents().find('a').click(function(e){
-			e.stopPropagation();
 			e.preventDefault();
 			var href = $(this).attr('href');
 			socket.emit('changeIframeURL', href);

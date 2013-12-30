@@ -1,6 +1,5 @@
 var express = require('express'),
-		app     = express(),
-		md5     = require('MD5');
+		app     = express();
 
 app.configure(function(){
 	app.use(express.static(__dirname));
@@ -21,7 +20,7 @@ io.sockets.on('connection', function(socket){
 
 	//Vérification du mot de passe
 	socket.on('password', function(password){
-		if(md5(password) == "21232f297a57a5a743894a0e4a801fc3"){
+		if(md5(password) == "admin"){
 			socket.emit('logged');
 		}
 	})
@@ -33,6 +32,7 @@ io.sockets.on('connection', function(socket){
 	//Action effectuée quand l'url de l'iframe va changer
 	socket.on('changeIframeURL', function(href){
 		console.log(href);
+		socket.emit('iframeHref', href);
 		socket.broadcast.emit('iframeHref', href);
 		socket.emit('changeURL');
 	})
