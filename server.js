@@ -20,7 +20,7 @@ io.sockets.on('connection', function(socket){
 
 	//Vérification du mot de passe
 	socket.on('password', function(password){
-		if(md5(password) == "admin"){
+		if(password == "admin"){
 			socket.emit('logged');
 		}
 	})

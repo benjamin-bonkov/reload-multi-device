@@ -1,9 +1,9 @@
 (function($){
-	var urlSite ='http://10.249.3.23/labV2/', // Url du site. Doit être sous la forme suivante http://192.168.1.1/monsite/
+	var urlSite ='http://172.16.53.121/', // Url du site. Doit être sous la forme suivante http://192.168.1.1/monsite/
 	    iframe  = $('#iframe'),
 	    socket  = io.connect(location.hostname + ':9000/'), // On écoute socket.io sur le port 9000
 	    hash = window.location.hash;
-
+	    iframe.height($(document).height());
 	//Récupère le DOM tout entier, le supprime et le remplace par un DOM appellé en AJAX
 	$.get(urlSite, function(){
 		iframe.attr('src', urlSite)
